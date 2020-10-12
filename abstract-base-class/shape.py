@@ -1,3 +1,4 @@
+import sys
 import abc
 
 class Shape(metaclass=abc.ABCMeta):
@@ -20,10 +21,6 @@ class Rectangle(Shape):
     def area(self):
         return self.l * self. b
 
-r = Rectangle(10, 20)
-
-print(r.area())
-
 class Triangle(Shape):
     """
     [] This will result a TypeError,
@@ -35,6 +32,22 @@ class Triangle(Shape):
         self.o = opposite
         self.a = adjacent
 
-tri = Triangle(10, 1, 2)
+try:
+    r = Rectangle(10, 20)
+    
+    print(r.area())
+except:
+    print(sys.exc_info()[0])
 
-print(t)
+try:
+    tri = Triangle(10, 1, 2)
+
+    """
+    The class won't even instantiate
+    because it was missing the implemnetation
+    of one or more abstract methods
+    of its superclass
+    """
+    print(t)
+except:
+    print(sys.exc_info()[0])
