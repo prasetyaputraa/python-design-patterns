@@ -18,6 +18,8 @@ class Rectangle(Shape):
         self.l = x
         self.b = y
 
+        print(x)
+
     def area(self):
         return self.l * self. b
 
@@ -34,6 +36,8 @@ class Triangle(Shape):
 
 try:
     r = Rectangle(10, 20)
+
+    print(r)
     
     print(r.area())
 except:
@@ -48,6 +52,6 @@ try:
     of one or more abstract methods
     of its superclass
     """
-    print(t)
+    print(tri)
 except:
     print(sys.exc_info()[0])
